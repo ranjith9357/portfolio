@@ -49,7 +49,7 @@
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="ranjith1.jpg" alt="Image"/></a></div>
-          <div class="h2 title">Ranjith</div>
+          <div class="h2 title">Ranjith Bala</div>
           <h5 class="text-white">Building Scalable Web & Desktop Applications</h5>
           <p class="category text-white">
             Full Stack Developer | Laravel | PHP | .NET | Cloud Deployment
@@ -164,7 +164,7 @@
           <div class="col-md-6">
             <h5>Frontend</h5>
             <ul>
-              <li>HTML, CSS, JavaScript</li>
+              <li>HTML, CSS, JavaScript, React.js</li>
               <li>Bootstrap</li>
             </ul>
           </div>
@@ -172,27 +172,28 @@
           <div class="col-md-6">
             <h5>Backend</h5>
             <ul>
-              <li>C#</li>
+              <li>C#(.Net)</li>
               <li>PHP (Laravel)</li>
               <li>REST API Development</li>
               <li>Authentication & Authorization</li>
             </ul>
           </div>
-
           <div class="col-md-6 mt-3">
             <h5>Database</h5>
             <ul>
+              <li>MySQL</li>
               <li>PGSQL</li>
               <li>SQLite</li>
             </ul>
           </div>
-
           <div class="col-md-6 mt-3">
             <h5>Tools & Technologies</h5>
             <ul>
               <li>Git & GitHub</li>
               <li>Docker</li>
-              <li>Cloud Deployment (VPS)</li>
+              <li>Azure</li>
+              <li>Proxmox</li>
+              <li>MQTT/EMQX</li>
             </ul>
           </div>
 
@@ -238,7 +239,6 @@
 
     <div class="row">
 
-      <!-- Project 1 -->
       <div class="col-md-6">
         <div class="card p-3 mb-4">
           <h5>Production ERP System</h5>
@@ -254,7 +254,6 @@
         </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="col-md-6">
         <div class="card p-3 mb-4">
           <h5>QR Code Tracking System</h5>
@@ -270,7 +269,6 @@
         </div>
       </div>
 
-      <!-- Project 3 -->
       <div class="col-md-6">
         <div class="card p-3 mb-4">
           <h5>TuneHub Project</h5>
@@ -286,10 +284,68 @@
         </div>
       </div>
 
+      <div class="col-md-6">
+        <div class="card p-3 mb-4">
+          <h5>RAG Project</h5>
+          <p>
+            Retrieval-Augmented Generation (RAG) system for enhanced information retrieval and generation.
+          </p>
+          <ul>
+            <li>Read Pdf and extract information</li>
+            <li>Model training and optimization</li>
+            <li>Similarity search implementation</li>
+          </ul>
+          <!-- <a href="https://github.com/ranjith9357/tunehub" target="_blank">View Code</a> -->
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 
+<div class="section" id="timeline">
+  <div class="container">
+
+    <div class="h4 text-center mb-4 title">My Journey Timeline</div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>2023</h5>
+          <p>Started learning Java Full Stack Development at Kodnest Technologies, Bengaluru.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>2024</h5>
+          <p>Joined as Desktop Application Developer & started working on real projects</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>2025</h5>
+          <p>I started to develop php laravel web applications & built ERP systems, QR tracking apps, Vehicle tracking applications & API services</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h5>2026</h5>
+          <p>Collected data from machines using IoT devices via MQTT and worked on Azure Cloud deployment, optimizing scalable backend systems.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
 <div class="section" id="education">
   <div class="container cc-education">
     <div class="h4 text-center mb-4 title">Education</div>
@@ -308,6 +364,7 @@
 
     <div class="card p-3">
       <h5>High School</h5>
+      <p class="mb-0">Board of Secondary</p>
       <small>2016 - 2017</small>
     </div>
 
@@ -328,7 +385,7 @@
       <p><strong>📧 Email:</strong><br>
       balaranjith327@gmail.com</p>
 
-      <a href="mailto:youremail@gmail.com" class="btn btn-danger">
+      <a href="mailto:balaranjith327@gmail.com" class="btn btn-danger">
         Send Email
       </a>
 
@@ -337,6 +394,25 @@
       </a>
 
     </div>
+  </div>
+</div>
+
+<div id="chat-toggle" onclick="toggleChat(event)">
+  <i class="fa fa-comments"></i>
+</div>
+
+<!-- Chat Box -->
+<div id="chat-box">
+  <div id="chat-header">
+    Chat with me
+    <span onclick="toggleChat()" style="float:right;cursor:pointer;">✖</span>
+  </div>
+
+  <div id="chat-body">
+    <div id="chat-messages"></div>
+
+    <input type="text" id="chat-input" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
   </div>
 </div>
 <footer class="text-center mt-5">
@@ -348,5 +424,40 @@
   <script src="js/now-ui-kit.js?ver=1.1.0"></script>
   <script src="js/aos.js?ver=1.1.0"></script>
   <script src="scripts/main.js?ver=1.1.0"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY");
+    })();
+  </script>
+  <script>
+  function toggleChat(event) {
+      if (event) event.stopPropagation();
+
+      let box = document.getElementById("chat-box");
+
+      if (box.style.display === "flex") {
+        box.style.display = "none";
+      } else {
+        box.style.display = "flex";
+      }
+    }
+
+    function sendMessage() {
+      let msg = document.getElementById("chat-input").value;
+
+      if (msg.trim() == "") {
+        alert("Please enter a message");
+        return;
+      }
+
+      let phone = "919100832269"; // your WhatsApp number (without +)
+      let url =
+        "https://wa.me/" + phone +
+        "?text=" + encodeURIComponent(msg);
+
+      window.open(url, "_blank");
+    }
+</script>
   </body>
 </html>
