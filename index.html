@@ -1,463 +1,419 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Creative CV</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
-    <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
-    <link href="css/main.css?ver=1.1.0" rel="stylesheet">
-    <noscript>
-      <style type="text/css">
-        [data-aos] {
-            opacity: 1 !important;
-            transform: translate(0) scale(1) !important;
-        }
-      </style>
-    </noscript>
-  </head>
-  <body id="top">
-    <header>
-      <div class="profile-page sidebar-collapse">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
-          <div class="container">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranjith Bala — Full-Stack Developer, Cloud &amp; DevOps</title>
+<meta name="description" content="Ranjith Bala — Full-Stack Developer building and deploying containerized web applications on Linux infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f4f0; --panel:#ffffff;
+    --ink:#131313; --ink-dim:#4d4d48; --ink-faint:#8a8a83;
+    --accent:#ff5a1f; --accent-ink:#ffffff;
+    --navy:#151b3d; --navy-ink:#f4f4f0;
+    --line:rgba(19,19,19,0.12);
+    --font-display:'Big Shoulders Display', system-ui, sans-serif;
+    --font-sans:'Inter', system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, monospace;
+    --max:1180px;
+    color-scheme: light;
+  }
+  html[data-theme="dark"]{
+    --bg:#111214; --panel:#1a1b1e;
+    --ink:#f4f4f0; --ink-dim:#b3b3ac; --ink-faint:#75756e;
+    --accent:#ff7a45; --accent-ink:#111214;
+    --navy:#232b55; --navy-ink:#f4f4f0;
+    --line:rgba(244,244,240,0.12);
+    color-scheme: dark;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation:none !important; transition:none !important;} }
+  body{ background:var(--bg); color:var(--ink); font-family:var(--font-sans); line-height:1.55; transition:background-color .3s ease, color .3s ease; overflow-x:hidden; }
+  a{ color:inherit; }
+  ::selection{ background:var(--accent); color:var(--accent-ink); }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+
+  /* ---------- header ---------- */
+  header{ position:sticky; top:0; z-index:50; background:color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .navbar{ display:flex; align-items:center; justify-content:space-between; height:66px; }
+  .brand{ font-family:var(--font-display); font-weight:800; font-size:22px; text-decoration:none; letter-spacing:0.01em; }
+  .navlinks{ display:flex; align-items:center; gap:26px; list-style:none; }
+  .navlinks a{ font-size:13.5px; text-decoration:none; color:var(--ink-dim); transition:color .2s ease; }
+  .navlinks a:hover{ color:var(--accent); }
+  .theme-btn{ width:36px; height:36px; border:1px solid var(--line); background:var(--panel); border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--ink); }
+  .theme-btn:hover{ border-color:var(--accent); }
+  .theme-btn svg{ width:16px; height:16px; }
+  .theme-btn .sun{ display:none; }
+  html[data-theme="dark"] .theme-btn .moon{ display:none; }
+  html[data-theme="dark"] .theme-btn .sun{ display:block; }
+  #navToggle{ display:none; background:none; border:1px solid var(--line); color:var(--ink); width:36px; height:34px; cursor:pointer; border-radius:6px; }
+  @media (max-width:760px){
+    .navlinks{ position:fixed; top:66px; left:0; right:0; background:var(--panel); flex-direction:column; align-items:flex-start; padding:8px 28px 18px; border-bottom:1px solid var(--line); display:none; gap:0; }
+    .navlinks.open{ display:flex; }
+    .navlinks a{ padding:13px 0; width:100%; border-bottom:1px solid var(--line); }
+    .navlinks .theme-btn{ margin-top:10px; }
+    #navToggle{ display:block; }
+  }
+
+  section{ padding:96px 0; }
+  .eyebrow{ font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); margin-bottom:14px; }
+  h2{ font-family:var(--font-display); font-weight:800; font-size:clamp(32px,4.6vw,48px); line-height:0.98; letter-spacing:0.005em; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .reveal span { display: inline;}
     
-              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Projects</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#resume">Resume</a></li>
-                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <div class="page-content">
-      <div>
-<div class="profile-page">
-  <div class="wrapper">
-    <div class="page-header page-header-small" filter-color="green">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg')"></div>
-      <div class="container">
-        <div class="content-center">
-          <div class="cc-profile-image"><a href="#"><img src="ranjith1.jpg" alt="Image"/></a></div>
-          <div class="h2 title">Ranjith Bala</div>
-          <h5 class="text-white">Building Scalable Web & Desktop Applications</h5>
-          <p class="category text-white">
-            Full Stack Developer | Laravel | PHP | .NET | Cloud Deployment
+  /* ---------- hero ---------- */
+  .hero{ padding:64px 0 40px; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:50px; align-items:center; }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+  .avail{ display:inline-flex; align-items:center; gap:8px; font-family:var(--font-mono); font-size:12.5px; color:var(--ink-dim); background:var(--panel); border:1px solid var(--line); padding:7px 13px; border-radius:99px; margin-bottom:26px; }
+  .avail i{ width:7px; height:7px; border-radius:50%; background:#3fae66; flex:none; }
+  .hero h1{
+    font-family:var(--font-display); font-weight:900; text-transform:uppercase;
+    font-size:clamp(42px, 6vw, 72px); line-height:0.86; letter-spacing:0.005em;
+  }
+  .hero h1 span{ display:inline; }
+  .hero h1 .hi{ color:var(--accent); }
+  .hero .role{ font-size:16.5px; color:var(--ink-dim); margin-top:22px; max-width:44ch; }
+  .hero .role b{ color:var(--ink); font-weight:600; }
+  .hero-cta{ display:flex; gap:12px; margin-top:32px; flex-wrap:wrap; }
+  .btn{ font-family:var(--font-mono); font-size:13px; padding:13px 20px; text-decoration:none; border:1px solid var(--ink); border-radius:2px; display:inline-block; transition:transform .15s ease, background .2s ease, color .2s ease; }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn.primary{ background:var(--ink); color:var(--bg); }
+  .btn.primary:hover{ background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+  .btn.ghost:hover{ background:var(--ink); color:var(--bg); }
+  .hero-meta{ display:flex; gap:22px; flex-wrap:wrap; margin-top:30px; font-family:var(--font-mono); font-size:12.5px; color:var(--ink-dim); }
+  .hero-meta a{ text-decoration:none; } .hero-meta a:hover{ color:var(--accent); }
+
+
+  /* --------- hero photo ---------- */
+
+  .hero-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .hero-photo img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid var(--line);
+  }
+
+  /* ---------- summary strip ---------- */
+  .strip{ background:var(--ink); color:var(--bg); }
+  .strip p{ font-family:var(--font-display); font-weight:600; font-size:clamp(22px,3vw,32px); line-height:1.25; max-width:24ch; text-transform:none; }
+  .strip p b{ color:var(--accent); font-weight:800; }
+
+  /* ---------- bento skills ---------- */
+  .bento{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:minmax(140px,auto); gap:14px; }
+  @media (max-width:900px){ .bento{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .bento{ grid-template-columns:1fr; } }
+  .cell{ border-radius:4px; padding:22px; display:flex; flex-direction:column; justify-content:flex-end; border:1px solid var(--line); }
+  .cell.panel{ background:var(--panel); }
+  .cell.navy{ background:var(--navy); color:var(--navy-ink); border-color:transparent; }
+  .cell.accent{ background:var(--accent); color:var(--accent-ink); border-color:transparent; }
+  .cell h3{ font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:0.05em; opacity:0.75; margin-bottom:12px; }
+  .cell .chips{ display:flex; flex-wrap:wrap; gap:6px; }
+  .cell .chips span{ font-size:12px; padding:5px 10px; border:1px solid currentColor; border-radius:99px; opacity:0.92; }
+  .c-span2{ grid-column:span 2; }
+  .c-row2{ grid-row:span 2; }
+  @media (max-width:900px){ .c-span2{ grid-column:span 2; } }
+  @media (max-width:560px){ .c-span2{ grid-column:span 1; } }
+
+  /* ---------- experience ---------- */
+  .exp-block{ background:var(--panel); border:1px solid var(--line); border-radius:4px; padding:40px clamp(24px,4vw,48px); }
+  .exp-top{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px; margin-bottom:6px; }
+  .exp-top h3{ font-family:var(--font-display); font-weight:800; font-size:28px; text-transform:uppercase; }
+  .exp-top .dates{ font-family:var(--font-mono); font-size:12.5px; color:var(--ink-faint); }
+  .exp-org{ color:var(--ink-dim); margin-bottom:28px; font-size:14.5px; }
+  .exp-list{ list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px 32px; counter-reset:item; }
+  .exp-list li{ font-size:14.5px; color:var(--ink-dim); padding-left:30px; position:relative; counter-increment:item; }
+  .exp-list li::before{ content:counter(item, decimal-leading-zero); position:absolute; left:0; top:0; font-family:var(--font-mono); font-size:11px; color:var(--accent); }
+
+  /* ---------- projects ---------- */
+  .proj-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  @media (max-width:760px){ .proj-grid{ grid-template-columns:1fr; } }
+  .proj-card{ border-radius:4px; padding:28px; border:1px solid var(--line); background:var(--panel); transition:transform .2s ease, box-shadow .2s ease; }
+  .proj-card:hover{ transform:translateY(-3px); }
+  .proj-card.dark{ background:var(--navy); color:var(--navy-ink); border-color:transparent; }
+  .proj-card .num{ font-family:var(--font-mono); font-size:12px; opacity:0.55; margin-bottom:14px; }
+  .proj-card h3{ font-family:var(--font-display); font-weight:800; font-size:22px; text-transform:uppercase; margin-bottom:12px; }
+  .proj-card p{ font-size:14.5px; opacity:0.85; margin-bottom:14px; }
+  .proj-card .stack{ display:flex; flex-wrap:wrap; gap:7px; }
+  .proj-card .stack span{ font-family:var(--font-mono); font-size:11px; border:1px solid currentColor; opacity:0.7; padding:4px 9px; border-radius:99px; }
+
+  /* ---------- learning ---------- */
+  .three-col{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media (max-width:760px){ .three-col{ grid-template-columns:1fr; } }
+  .lcol{ background:var(--panel); border:1px solid var(--line); border-radius:4px; padding:26px; }
+  .lcol h3{ font-family:var(--font-mono); font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--accent); margin-bottom:16px; }
+  .lcol .item{ margin-bottom:14px; }
+  .lcol .item:last-child{ margin-bottom:0; }
+  .lcol .item p.t{ font-size:14.5px; }
+  .lcol .item p.s{ font-size:12.5px; color:var(--ink-faint); margin-top:2px; }
+
+  /* ---------- contact ---------- */
+  .contact-block{ background:var(--ink); color:var(--bg); border-radius:4px; padding:clamp(40px,6vw,72px); text-align:center; }
+  .contact-block h2{ color:var(--bg); max-width:16ch; margin:0 auto 20px; }
+  .contact-block p.lede{ opacity:0.7; max-width:50ch; margin:0 auto 36px; font-size:16px; }
+  .contact-cta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+  .contact-block .btn.primary{ background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+  .contact-block .btn.ghost{ border-color:rgba(244,244,240,0.3); }
+  .contact-block .btn.ghost:hover{ background:var(--bg); color:var(--ink); }
+  .contact-rows{ display:flex; justify-content:center; gap:34px; flex-wrap:wrap; font-family:var(--font-mono); font-size:13px; opacity:0.75; }
+  .contact-rows a{ text-decoration:none; } .contact-rows a:hover{ color:var(--accent); opacity:1; }
+
+  footer{ padding:28px 0; }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:var(--font-mono); font-size:12px; color:var(--ink-faint); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar wrap">
+    <a href="#top" class="brand">RB</a>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#learning">Learning</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+        </button>
+      </li>
+    </ul>
+    <button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="avail reveal"><i></i> actively seeking cloud / devops opportunities</div>
+          <!-- <h1 class="reveal"><span>RANJITH</span><span class="hi">BALA</span></h1> -->
+          <h1 class="reveal">
+              <span>RANJITH</span><span class="hi"> BALA</span>
+          </h1>
+          <p class="role reveal">
+              <b>Full-Stack Developer</b> with hands-on experience in <b>DevOps</b> and <b>Cloud Engineering</b> — building, deploying, and maintaining containerized applications with Linux, Docker, reverse proxies, CI/CD pipelines, monitoring, and cloud technologies.
           </p>
-
-          <div class="mt-3">
-            <a class="btn btn-primary mr-2 smooth-scroll"
-              href="#contact"
-              data-aos="zoom-in">
-              Hire Me
-            </a>
-
-            <a class="btn btn-primary mr-2 d-inline-flex align-items-center justify-content-center"
-              href="resume.pdf"
-              download
-              data-aos="zoom-in"
-              style="height: 42px; min-width: 170px;">
-              Download Resume
-            </a>
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn primary">View projects</a>
+            <a href="resume.pdf" download class="btn ghost">Download résumé</a>
+            <a href="#contact" class="btn ghost">Get in touch</a>
           </div>
-          <div class="mt-3">
-            <a href="https://github.com/ranjith9357" target="_blank" class="text-white mr-3">
-              <i class="fa fa-github fa-2x"></i>
-            </a>
-
-            <a href="https://linkedin.com/in/ranjith9357" target="_blank" class="text-white mr-3">
-              <i class="fa fa-linkedin fa-2x"></i>
-            </a>
+          <div class="hero-meta reveal">
+            <a href="mailto:balaranjith327@gmail.com">balaranjith327@gmail.com</a>
+            <span>Coimbatore,TN</span>
           </div>
         </div>
-      </div>
-   
-  </div>
-</div>
-<div class="section" id="about">
-  <div class="container">
-    <div class="card" data-aos="fade-up" data-aos-offset="10">
-      <div class="row">
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title">About</div>
-            <p>
-              Full Stack Developer with over 1 year of hands-on experience in developing and maintaining desktop applications (C#, WinForms) and web applications using Laravel and PHP. 
-
-              I have worked on real-time projects involving production systems, API development, 
-              QR-based tracking systems, and ERP-related modules.
-
-              I also have experience in deploying applications to cloud servers, managing hosting, 
-              and optimizing performance for production environments.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-12">
-          <div class="card-body">
-            <div class="h4 mt-0 title">Basic Information</div>
-            <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8">25</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">balaranjith327@gmail.com</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
-              <div class="col-sm-8">+919100832269</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
-              <div class="col-sm-8">4/72C,North Street,Keeranatham,Coimbatore 641035</div>
-            </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
-              <div class="col-sm-8">English,Tamil,Telugu</div>
-            </div>
-          </div>
+        <div class="hero-photo reveal">
+          <img src="ranjith2.jpg" alt="Ranjith Bala">
         </div>
       </div>
     </div>
-  </div>
-</div>
- <div class="container">
-    <div class="h4 text-center mb-4 title">Experience</div>
+  </section>
 
-    <div class="card">
-      <div class="card-body">
-        <div class="h5">Full Stack Developer</div>
-        <p class="category">1+ Year Experience</p>
+  <section id="about" class="strip">
+    <div class="wrap">
+    <p class="reveal">
+        Building and deploying containerized applications on <b>Linux</b>, with hands-on production experience in <b>Docker</b>, <b>Traefik</b>, <b>Jenkins</b>, and <b>Terraform</b> — expanding my expertise in <b>Azure Cloud</b> and pursuing opportunities in <b>Cloud &amp; DevOps Engineering</b>.
+    </p>
+    </div>
+  </section>
 
-        <ul>
-          <li>Developed web applications using Laravel and PHP</li>
-          <li>Built REST APIs for production and reporting systems</li>
-          <li>Worked on ERP modules (Production, Quality, Inspection)</li>
-          <li>Developed desktop applications using .NET</li>
-          <li>Implemented QR code generation and scanning systems</li>
-          <li>Handled cloud deployment and server management</li>
+  <section id="skills">
+    <div class="wrap">
+      <div class="eyebrow reveal">Technical Skills</div>
+      <h2 class="reveal" style="margin-bottom:36px;">What I work with</h2>
+      <div class="bento reveal">
+        <div class="cell navy c-span2 c-row2">
+          <h3>Cloud &amp; DevOps</h3>
+          <div class="chips">
+            <span>Linux</span><span>Docker</span><span>Jenkins</span>
+            <span>Terraform</span><span>Git CI/CD</span><span>Proxmox VE</span>
+            <span>Azure (in progress)</span><span>Grafana</span>
+          </div>
+        </div>
+        <div class="cell accent">
+          <h3>Languages</h3>
+          <div class="chips"><span>C#</span><span>Python</span><span>PHP</span><span>JavaScript</span></div>
+        </div>
+        <div class="cell panel">
+          <h3>Databases</h3>
+          <div class="chips"><span>PostgreSQL</span><span>SQLite</span></div>
+        </div>
+        <div class="cell panel c-span2">
+          <h3>Frameworks</h3>
+          <div class="chips"><span>Laravel</span><span>Filament</span><span>.NET (WinForms)</span></div>
+        </div>
+        <div class="cell panel">
+          <h3>Web &amp; Networking</h3>
+          <div class="chips"><span>REST APIs</span><span>Traefik</span><span>Apache2</span><span>TCP/IP</span><span>HTTP/HTTPS</span><span>DNS</span></div>
+        </div>
+        <div class="cell accent c-span2">
+          <h3>IoT &amp; Messaging</h3>
+          <div class="chips">
+              <span>MQTT</span>
+              <span>ESP32</span>
+              <span>EMQX</span>
+              <span>Real-time Communication</span>
+          </div>
+      </div>
+        <div class="cell panel">
+          <h3>Other</h3>
+          <div class="chips"><span>Ollama</span><span>RAG</span><span>Vector embeddings</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="eyebrow reveal">Experience</div>
+      <div class="exp-block reveal">
+        <div class="exp-top">
+          <h3>Software Developer</h3>
+          <span class="dates">Oct 2024 — Present</span>
+        </div>
+        <div class="exp-org">C.R.I Pumps Pvt. Ltd., Coimbatore</div>
+        <ul class="exp-list">
+          <li>Built and deployed containerized production apps (Laravel/Filament, Django) with Docker Compose behind Traefik on Linux servers.</li>
+          <li>Set up Git-based CI/CD workflows, including Jenkins pipelines, shipping updates across dev and prod with minimal downtime.</li>
+          <li>Diagnosed production Linux issues — disk I/O tuning (TRIM/discard) and container crash-loop debugging.</li>
+          <li>Administered PostgreSQL for MIS dashboards and traceability systems, including ETL pipelines and query fixes.</li>
+          <li>Built REST APIs integrating IoT devices (ESP32), scanning hardware, and web applications in real time.</li>
+          <li>Deployed a CUPS print server in Docker, resolving PAM auth, socket, and reverse-proxy routing for QR label printing.</li>
+          <li>Built a Digital Manufacturing MIS dashboard (HTML/Chart.js) with role-based access, monitored via Grafana.</li>
+          <li>Documented deployment procedures in Confluence to standardize Django/Laravel onboarding.</li>
         </ul>
       </div>
     </div>
+  </section>
 
-  </div>
-</div>
-<div class="section" id="skill">
-  <div class="container">
-    <div class="h4 text-center mb-4 title">Technical Skills</div>
-
-    <div class="card">
-      <div class="card-body">
-
-        <div class="row">
-
-          <div class="col-md-6">
-            <h5>Frontend</h5>
-            <ul>
-              <li>HTML, CSS, JavaScript, React.js</li>
-              <li>Bootstrap</li>
-            </ul>
-          </div>
-
-          <div class="col-md-6">
-            <h5>Backend</h5>
-            <ul>
-              <li>C#(.Net)</li>
-              <li>PHP (Laravel)</li>
-              <li>REST API Development</li>
-              <li>Authentication & Authorization</li>
-            </ul>
-          </div>
-          <div class="col-md-6 mt-3">
-            <h5>Database</h5>
-            <ul>
-              <li>MySQL</li>
-              <li>PGSQL</li>
-              <li>SQLite</li>
-            </ul>
-          </div>
-          <div class="col-md-6 mt-3">
-            <h5>Tools & Technologies</h5>
-            <ul>
-              <li>Git & GitHub</li>
-              <li>Docker</li>
-              <li>Azure</li>
-              <li>Proxmox</li>
-              <li>MQTT/EMQX</li>
-            </ul>
-          </div>
-
-          <div class="col-md-6 mt-3">
-            <h5>Other</h5>
-            <ul>
-              <li>.NET Desktop Application</li>
-              <li>QR Code Integration</li>
-              <li>ERP Systems (Production, Quality)</li>
-            </ul>
-          </div>
-
+  <section id="projects">
+    <div class="wrap">
+      <div class="eyebrow reveal">Projects</div>
+      <h2 class="reveal" style="margin-bottom:36px;">Projects &amp; Work</h2>
+      <div class="proj-grid reveal">
+        <div class="proj-card">
+          <div class="num">01</div>
+          <h3>Production Display &amp; Traceability</h3>
+          <p>QR-code scanning for pump serial numbers, live dashboards, and real-time production counts — containerized behind Traefik, monitored with Grafana.</p>
+          <div class="stack"><span>Laravel</span><span>Docker</span><span>Traefik</span><span>Grafana</span></div>
         </div>
-
+        <div class="proj-card dark">
+          <div class="num">02</div>
+          <h3>Sticker / Label Printing</h3>
+          <p>PDF-based sticker design tool with dynamic layouts, QR embedding, and Livewire live preview — plus a CUPS print server debugged from scratch inside Docker.</p>
+          <div class="stack"><span>Filament</span><span>Livewire</span><span>CUPS</span></div>
+        </div>
+        <div class="proj-card dark">
+          <div class="num">03</div>
+          <h3>OEE Monitoring</h3>
+          <p>Django app deployed on Gunicorn behind Traefik — stabilized through a full deployment cycle of dependency, CSRF, and host-config fixes.</p>
+          <div class="stack"><span>Django</span><span>Gunicorn</span><span>Docker</span></div>
+        </div>
+        <div class="proj-card">
+          <div class="num">04</div>
+          <h3>Local RAG System</h3>
+          <p>Locally-hosted retrieval-augmented generation on Ollama — document ingestion, vector embeddings, and semantic search, no external API calls.</p>
+          <div class="stack"><span>Ollama</span><span>Vector DB</span><span>Docker</span></div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="section" id="achievements">
-  <div class="container">
+  </section>
 
-    <div class="h4 text-center mb-4 title">Achievements</div>
-
-    <div class="card p-4 shadow-sm">
-      <ul class="mb-0">
-        <li>Developed ERP system used in production environment</li>
-        <li>Reduced API response time by optimizing queries</li>
-        <li>
-          Certificate of participation AI in Manufacturing conducted by MaxByte Technologies
-          - 
-          <a href="certificate.pdf" target="_blank">
-            View Certificate
-          </a>
-        </li>
-      </ul>
+  <section id="learning">
+    <div class="wrap">
+      <div class="eyebrow reveal">Background</div>
+      <h2 class="reveal" style="margin-bottom:36px;">Certifications &amp; education</h2>
+      <div class="three-col reveal">
+        <div class="lcol">
+          <h3>Certifications</h3>
+          <div class="item"><p class="t">Azure Fundamentals</p><p class="s">AZ-900 — exam prep in progress</p></div>
+          <div class="item"><p class="t">Silver Medal, Rapid Manufacturing</p><p class="s">NPTEL, IIT Kanpur</p></div>
+          <div class="item"><p class="t">Air Pollution and Control</p><p class="s">NPTEL, IIT Roorkee</p></div>
+        </div>
+        <div class="lcol">
+          <h3>Internship</h3>
+          <div class="item"><p class="t">Java Full Stack Developer</p><p class="s">Kodnest Technologies, Bangalore · Sep 2023 – Mar 2024</p></div>
+        </div>
+        <div class="lcol">
+          <h3>Education</h3>
+          <div class="item"><p class="t">B.Tech, Mechanical Engineering</p><p class="s">Annamacharya Institute of Technology &amp; Sciences, JNTUA — Tirupati · 2023</p></div>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
-</div>
-<div class="section" id="portfolio">
-  <div class="container">
-    <div class="h4 text-center mb-4 title">Projects</div>
-
-    <div class="row">
-
-      <div class="col-md-6">
-        <div class="card p-3 mb-4">
-          <h5>Production ERP System</h5>
-          <p>
-            Developed a production management system with modules for line tracking, 
-            quality inspection, and reporting dashboards using Laravel.
-          </p>
-          <ul>
-            <li>Built REST APIs for real-time data</li>
-            <li>Handled production & quality modules</li>
-            <li>Optimized database queries</li>
-          </ul>
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-block reveal">
+        <div class="eyebrow reveal" style="justify-content:center;">Contact</div>
+        <h2>Let's build something that stays up.</h2>
+        <p class="lede">
+            Seeking Cloud / DevOps opportunities where I can apply my hands-on experience across application development, infrastructure, containerization, and deployment.
+        </p>
+        <div class="contact-cta">
+          <a href="mailto:balaranjith327@gmail.com" class="btn primary">Send an email</a>
+          <a href="https://wa.me/919100832269" target="_blank" rel="noopener" class="btn ghost">Chat on WhatsApp</a>
+        </div>
+        <div class="contact-rows">
+          <a href="mailto:balaranjith327@gmail.com">balaranjith327@gmail.com</a>
+          <a href="https://github.com/ranjith9357" target="_blank" rel="noopener">github.com/ranjith9357</a>
+          <a href="https://linkedin.com/in/ranjith9357" target="_blank" rel="noopener">linkedin.com/in/ranjith9357</a>
         </div>
       </div>
-
-      <div class="col-md-6">
-        <div class="card p-3 mb-4">
-          <h5>QR Code Tracking System</h5>
-          <p>
-            Developed a QR-based tracking system using .NET and SQLite 
-            for material and product tracking.
-          </p>
-          <ul>
-            <li>Dynamic QR generation</li>
-            <li>Scan-based validation system</li>
-            <li>Desktop application development</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card p-3 mb-4">
-          <h5>TuneHub Project</h5>
-          <p>
-            Music streaming web application built using full stack technologies.
-          </p>
-          <ul>
-            <li>User authentication</li>
-            <li>Media streaming features</li>
-            <li>Frontend + backend integration</li>
-          </ul>
-          <a href="https://github.com/ranjith9357/tunehub" target="_blank">View Code</a>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card p-3 mb-4">
-          <h5>RAG Project</h5>
-          <p>
-            Retrieval-Augmented Generation (RAG) system for enhanced information retrieval and generation.
-          </p>
-          <ul>
-            <li>Read Pdf and extract information</li>
-            <li>Model training and optimization</li>
-            <li>Similarity search implementation</li>
-          </ul>
-          <!-- <a href="https://github.com/ranjith9357/tunehub" target="_blank">View Code</a> -->
-        </div>
-      </div>
-
     </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 RANJITH BALA</p>
+    <p>COIMBATORE, TAMIL NADU</p>
   </div>
-</div>
-
-<div class="section" id="timeline">
-  <div class="container">
-
-    <div class="h4 text-center mb-4 title">My Journey Timeline</div>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>2023</h5>
-          <p>Started learning Java Full Stack Development at Kodnest Technologies, Bengaluru.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>2024</h5>
-          <p>Joined as Desktop Application Developer & started working on real projects</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>2025</h5>
-          <p>I started to develop php laravel web applications & built ERP systems, QR tracking apps, Vehicle tracking applications & API services</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h5>2026</h5>
-          <p>Collected data from machines using IoT devices via MQTT and worked on Azure Cloud deployment, optimizing scalable backend systems.</p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-<div class="section" id="education">
-  <div class="container cc-education">
-    <div class="h4 text-center mb-4 title">Education</div>
-
-    <div class="card p-3 mb-3">
-      <h5>Bachelor's Degree - Mechanical Engineering</h5>
-      <p class="mb-0">University of JNTUA</p>
-      <small>2020 - 2023</small>
-    </div>
-
-    <div class="card p-3 mb-3">
-      <h5>Diploma - Mechanical Engineering</h5>
-      <p class="mb-0">State Board of Technical Education</p>
-      <small>2017 - 2020</small>
-    </div>
-
-    <div class="card p-3">
-      <h5>High School</h5>
-      <p class="mb-0">Board of Secondary</p>
-      <small>2016 - 2017</small>
-    </div>
-
-  </div>
-</div>
-<div class="section" id="contact">
-  <div class="container">
-    <div class="h4 text-center mb-4 title">Contact Me</div>
-
-    <div class="card p-4 text-center">
-
-      <p><strong>📍 Address:</strong><br>
-      Coimbatore, Tamil Nadu</p>
-
-      <p><strong>📞 Phone:</strong><br>
-      +91 9100832269</p>
-
-      <p><strong>📧 Email:</strong><br>
-      balaranjith327@gmail.com</p>
-
-      <a href="mailto:balaranjith327@gmail.com" class="btn btn-danger">
-        Send Email
-      </a>
-
-      <a href="https://wa.me/919100832269" class="btn btn-success">
-        Chat on WhatsApp
-      </a>
-
-    </div>
-  </div>
-</div>
-
-<div id="chat-toggle" onclick="toggleChat(event)">
-  <i class="fa fa-comments"></i>
-</div>
-
-<!-- Chat Box -->
-<div id="chat-box">
-  <div id="chat-header">
-    Chat with me
-    <span onclick="toggleChat()" style="float:right;cursor:pointer;">✖</span>
-  </div>
-
-  <div id="chat-body">
-    <div id="chat-messages"></div>
-
-    <input type="text" id="chat-input" placeholder="Type your message..." />
-    <button onclick="sendMessage()">Send</button>
-  </div>
-</div>
-<footer class="text-center mt-5">
-  <p>© 2026 Ranjith | Full Stack Developer</p>
 </footer>
-  <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
-  <script src="js/core/popper.min.js?ver=1.1.0"></script>
-  <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
-  <script src="js/now-ui-kit.js?ver=1.1.0"></script>
-  <script src="js/aos.js?ver=1.1.0"></script>
-  <script src="scripts/main.js?ver=1.1.0"></script>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("YOUR_PUBLIC_KEY");
-    })();
-  </script>
-  <script>
-  function toggleChat(event) {
-      if (event) event.stopPropagation();
 
-      let box = document.getElementById("chat-box");
+<script>
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('themeBtn');
+  function applyTheme(t){ root.setAttribute('data-theme', t); try{ localStorage.setItem('theme', t); }catch(e){} }
+  (function initTheme(){
+    let saved = null;
+    try{ saved = localStorage.getItem('theme'); }catch(e){}
+    applyTheme(saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  })();
+  themeBtn.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
 
-      if (box.style.display === "flex") {
-        box.style.display = "none";
-      } else {
-        box.style.display = "flex";
-      }
-    }
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => { const open = links.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { links.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }));
 
-    function sendMessage() {
-      let msg = document.getElementById("chat-input").value;
-
-      if (msg.trim() == "") {
-        alert("Please enter a message");
-        return;
-      }
-
-      let phone = "919100832269"; // your WhatsApp number (without +)
-      let url =
-        "https://wa.me/" + phone +
-        "?text=" + encodeURIComponent(msg);
-
-      window.open(url, "_blank");
-    }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
-  </body>
+
+</body>
 </html>
