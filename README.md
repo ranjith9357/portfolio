@@ -46,7 +46,7 @@ portfolio/
 ### Clone the Repository
 
 ```bash
-git clone <your-github-repository-url>
+git clone https://github.com/ranjith9357/portfolio.git
 ```
 
 ### Navigate to the Project
